@@ -1,0 +1,266 @@
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='%MarkCap: See the percent market cap on coinmarketcap.com!'>
+  <meta name='author' content='Christopher'>
+  <meta property='og:title' content='%MarkCap: See the percent market cap on coinmarketcap.com!' />
+  <meta property='og:url' content='http://frewinchristopher.github.io/init/' />
+  <title>%MarkCap: See the percent market cap on coinmarketcap.com!</title>
+  <link rel="icon" type="ico" href="I.ico" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.6em;
+      color: black;
+      zoom: 125%;
+    }
+
+    .body-change {
+      background-color: rgba(0, 0, 0, .9);
+      color: white ;
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+
+    .container {
+      width: 500px;
+      margin: auto;
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .github{
+      font-size: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00B4FF;
+    }
+
+    a:visited{
+      text-decoration: none;
+      color: #00B4F1;
+    }
+
+    #arrow svg {
+      height: auto;
+      width: 100px;
+      fill: white;
+      -webkit-animation-name: upAndDown;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: 10000;
+    }
+
+    .bring-out {
+      position: relative;
+      top: -125px;
+    }
+
+    #markCap {
+      background: #7bc673;
+      color: white;
+      border-radius: 3px;
+      padding: 20px 20px;
+      font-size: 24px;
+      margin: auto;
+      width: 140px;
+      display: block;
+      text-align: center;
+      transition: background 0.2s;
+      -webkit-box-shadow: 5px 2px 4px 0px rgba(33, 33, 33, 0.53);
+      -moz-box-shadow: 5px 2px 4px 0px rgba(33, 33, 33, 0.53);
+      box-shadow: 5px 2px 4px 0px rgba(33, 33, 33, 0.53);
+    }
+
+    #markCap:hover {
+      background: #ff4111;
+      position: relative;
+      -webkit-box-shadow: 11px 11px 23px 0px rgba(33, 33, 33, 0.53);
+      -moz-box-shadow: 11px 11px 23px 0px rgba(33, 33, 33, 0.53);
+      box-shadow: 11px 11px 23px 0px rgba(33, 33, 33, 0.53);
+    }
+
+    #markCap:active {
+      background: #ff1111;
+      top: 1px;
+      -webkit-box-shadow: 8px 11px 23px 0px rgba(33, 33, 33, 0.53);
+      -moz-box-shadow: 8px 11px 23px 0px rgba(33, 33, 33, 0.53);
+      box-shadow: 8px 11px 23px 0px rgba(33, 33, 33, 0.53);
+    }
+
+    .we-take {
+      font-size: 20px;
+    }
+
+    #back {
+      -webkit-animation-name: back;
+      -webkit-animation-duration: 1.5s;
+      -webkit-animation-timing-function: ease-in;
+      -webkit-animation-iteration-count: 1;
+    }
+
+    #click-drag {
+      -webkit-animation-name: clickDrag;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
+    }
+
+    .hide {
+      opacity: 0;
+    }
+
+    #display-none{
+      display:none;
+    }
+
+    .show {
+      opacity: 1;
+    }
+
+    @keyframes back {
+      0% {
+        -webkit-transform: translateX(500px) rotate(540deg);
+        transform: translateX(500px) rotate(540deg);
+      }
+      100% {
+        -webkit-transform: translateX(0px) rotate(0deg);
+        transform: translateX(0px) rotate(0deg);
+      }
+    }
+
+    @keyframes upAndDown {
+      0% {
+        -webkit-transform: translateY(125px);
+        transform: translateY(125px);
+        fill: rgba(0, 0, 0, .9);
+      }
+      50% {
+        fill: white;
+      }
+      100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        fill: rgba(0, 0, 0, .9);
+      }
+    }
+
+    @keyframes clickDrag {
+      0% {
+        -webkit-transform: translateX(2.5px);
+        transform: translateX(2.5px);
+      }
+      10% {
+        opacity: .25;
+      }
+      25% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+      }
+      50% {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+      }
+      75% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      90% {
+        -webkit-transform: translateX(-2.5px);
+        transform: translateX(-2.5px);
+      }
+      100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="bring-out">
+      <div id="arrow" class="hide">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <polygon points="256.5,64.5 64.5,256.5 176.5,256.5 176.5,448.5 336.5,448.5 336.5,256.5 448.5,256.5 " />
+        </svg>
+      </div>
+      <br>
+
+      <a id="markCap" target="_blank" href="javascript: (function() { if (!($ = window.jQuery)) { script = document.createElement( 'script' ); script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'; script.onload=markCap; document.body.appendChild(script); } else { markCap(); } function markCap() { var iTotalMarketCap = parseFloat($('#total-marketcap').attr('data-usd')); $('table#currencies tbody tr td:nth-child(3)').each(function(){ if (this.innerHTML.includes('%')) { return; } var iThisMarketCap = parseFloat($(this).attr('data-usd')); var iPercent = iThisMarketCap / iTotalMarketCap * 100; this.append(' (' + iPercent.toFixed(1).toString() + '%)') }); } }()); ">%MarkCap</a>
+
+      <p id="info">Drag this button to your bookmarks bar and whenever you are on coinmarketcap.com, click it to get each currency's percentage of total market cap :).</p>
+    </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+    $(function() {
+
+      var $body = $("body"),
+          $info = $("#info"),
+          $arrow = $("#arrow"),
+          $hoverInstructions = $(".hover-instructions"),
+          $weTake = $(".we-take");
+
+      function handleMouseOver() {
+        $body.toggleClass("body-change");
+        $info.toggleClass("hide");
+        $arrow.toggleClass("show");
+        $hoverInstructions.fadeIn();
+        $weTake.hide();
+      }
+
+      function handleMouseOut() {
+        $body.toggleClass("body-change");
+        $arrow.toggleClass("show");
+        $info.toggleClass("hide");
+        $hoverInstructions.hide();
+        $weTake.fadeIn();
+      }
+
+      $("#markCap")
+        .mouseover(handleMouseOver)
+        .mouseout(handleMouseOut);
+
+    });
+  </script>
+
+  <!-- Repo Card -->
+  <script src="https://rawgit.com/FarhadG/repo-card/master/repo-card.min.js#a"></script>
+
+  <script>
+    RepoCard.configure({
+      repo: 'markcap',
+      username: 'frewinchristopher',
+      title: 'markcap',
+      subtitle: '@Galt_',
+      thumb: 'url(https://avatars2.githubusercontent.com/u/11366744?s=460&v=4)',
+      background: 'url(https://www.toptal.com/designers/subtlepatterns/patterns/christmas-dark.png)',
+      info: 'I noticed one day that this key statistic was missing from coinmarketcap.com - otherwise one of my favorites for a quick financial overview of cryptocurrencies! I made this bookmarklet to quickly add that statistic next to the market cap per each coin :)',
+      position: {
+        bottom: 25,
+        right: 25
+      }
+    });
+  </script>
+
+</body>
+
+</html>
