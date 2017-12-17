@@ -1,6 +1,6 @@
 # Markcap bookmarklet
 
-![Showing what the bookmarklet does on coinmarketcap.com](markcap.gif)
+![Showing what the bookmarklet does on coinmarketcap.com](out.gif)
 
 You can copy the bookmarklet over on frewinchristopher.github.io/markCap
 
